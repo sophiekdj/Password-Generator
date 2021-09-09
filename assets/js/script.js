@@ -84,13 +84,15 @@ function generatePassword() {
     "Please choose a password length between 8 and 128"
   );
   console.log("Password length of " + passwordLength);
-  if (!passwordLength) {
-    ("You must choose a password length between 8 and 128");
-  } else if (passwordLength < 8 || passwordLength > 128) {
+
+  if (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt(
       "The password length chosen must be between 8 and 128"
     );
     console.log("Password length of " + passwordLength);
+  } else if (!passwordLength) {
+    ("You must choose a password length between 8 and 128");
+    generatePassword();
   } else {
     // Confirmation messages for use of lower case, upper case, numbers and symbols
     confirmLowerCase = confirm(
