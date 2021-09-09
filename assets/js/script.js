@@ -40,7 +40,7 @@ var lowerCase = [
 var upperCase = lowerCase.map(function (toUpper) {
   return toUpper.toUpperCase();
 });
-var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var symbols = [
   "!",
   " ",
@@ -176,6 +176,22 @@ function generatePassword() {
     userChoices = symbols;
     console.log(userChoices);
   }
+
+  // Empty variable
+  var passwordBlank = [];
+
+  // Random selection loop
+  for (var i = 0; i < passwordLength; i++) {
+    var allChoices =
+      userChoices[Math.floor(Math.random() * userChoices.length)];
+    passwordBlank.push(allChoices);
+    console.log(allChoices);
+  }
+
+  // Join and return password
+  var password = passwordBlank.join("");
+  console.log("Your password is " + password);
+  return password;
 }
 
 // Write password to the #password input
