@@ -7,6 +7,7 @@ var confirmLowerCase;
 var confirmUpperCase;
 var confirmNumbers;
 var confirmSymbols;
+var userChoices;
 
 var lowerCase = [
   "a",
